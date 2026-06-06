@@ -1,0 +1,18 @@
+title: CASE Weekly Blog
+description: Bitácora semanal del equipo CASE
+baseurl: "/case-weekly-blog"
+url: "https://cmercadogallardo.github.io"
+
+# Build settings
+markdown: kramdown
+theme: minima
+
+# GitHub Pages configuration
+github:
+  is_project_page: true
+  repository_url: https://github.com/cmercadogallardo/case-weekly-blog
+
+# Exclude from build
+exclude:
+  - README.md
+  - .gitignore
