@@ -27,21 +27,25 @@ async function loadInclude(elementId, filePath) {
 
 // Auto-load cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', function() {
+  // Determinar ruta base según la ubicación del archivo
+  const isNested = window.location.pathname.includes('/slop/');
+  const basePath = isNested ? '../../' : '';
+  
   // Header (siempre presente)
   const headerPlaceholder = document.getElementById('header-placeholder');
   if (headerPlaceholder) {
-    loadInclude('header-placeholder', 'fragments/header.html');
+    loadInclude('header-placeholder', basePath + 'fragments/header.html');
   }
 
   // Footer (siempre presente)
   const footerPlaceholder = document.getElementById('footer-placeholder');
   if (footerPlaceholder) {
-    loadInclude('footer-placeholder', 'fragments/footer.html');
+    loadInclude('footer-placeholder', basePath + 'fragments/footer.html');
   }
 
   // Archive list (solo en index y archive pages)
   const archivePlaceholder = document.getElementById('archive-placeholder');
   if (archivePlaceholder) {
-    loadInclude('archive-placeholder', 'fragments/archive-list.html');
+    loadInclude('archive-placeholder', basePath + 'fragments/archive-list.html');
   }
 });
